@@ -6,10 +6,12 @@ require 'trx_analyzer/abstract_connection_adapter'
 
 module TrxAnalyzer
   # Enable monkey patching: you should call this method on application initialize phase.
-  def init!
-    ActiveSupport.on_load(:active_record) do
-      ActiveRecord::ConnectionAdapters::TransactionManager.prepend TrxAnalyzer::TransactionManagerPatch
-      ActiveRecord::ConnectionAdapters::AbstractAdapter.prepend TrxAnalyzer::AbstractConnectionAdapterPatch
+  class << self
+    def init!
+      ActiveSupport.on_load(:active_record) do
+        ActiveRecord::ConnectionAdapters::TransactionManager.prepend TrxAnalyzer::TransactionManagerPatch
+        ActiveRecord::ConnectionAdapters::AbstractAdapter.prepend TrxAnalyzer::AbstractConnectionAdapterPatch
+      end
     end
   end
 end
