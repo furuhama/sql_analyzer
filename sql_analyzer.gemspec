@@ -2,16 +2,16 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "trx_analyzer/version"
+require "sql_analyzer/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "trx_analyzer"
-  spec.version       = TrxAnalyzer::VERSION
+  spec.name          = "sql_analyzer"
+  spec.version       = SqlAnalyzer::VERSION
   spec.authors       = ["furuhama"]
   spec.email         = ["furuhama@users.noreply.github.com"]
 
-  spec.summary       = %q{Analyze database transactions}
-  spec.description   = %q{Analyze database transactions for ActiveRecord and MySQL}
+  spec.summary       = %q{Analyze database transactions and queries}
+  spec.description   = %q{Analyze database transactions and JOIN SQLs for ActiveRecord and MySQL}
   spec.homepage      = "https://furuhama.github.io"
   spec.license       = "MIT"
 
