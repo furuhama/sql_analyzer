@@ -1,6 +1,6 @@
 # fronzen_string_literal: true
 
-module TrxAnalyzer
+module SqlAnalyzer
   module TransactionManagerPatch
     attr_accessor :caller_stack, :tables, :database
 

@@ -1,6 +1,6 @@
 # fronzen_string_literal: true
 
-module TrxAnalyzer
+module SqlAnalyzer
   module AbstractConnectionAdapterPatch
     def to_sql_and_binds(arel_or_sql_string, binds = [])
       case arel_or_sql_string
